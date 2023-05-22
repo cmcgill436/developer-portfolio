@@ -270,12 +270,18 @@ nav ul li {
 .project-pic {
   width: 65%;
   height: 60%;
+  box-shadow: 0 3px 10px var(--primary);
 }
 
 .projects-container {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.project-card:hover {
+  transform: translateY(-0.5rem) scale(1.15);
+  transition: 1s;
 }
 
 .project-card {
