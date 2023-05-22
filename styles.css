@@ -1,0 +1,566 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,900;1,700&display=swap");
+
+/* Variables */
+:root {
+  --font-family: "Roboto", sans-serf;
+  --normal-font: 400;
+  --bold-font: 700;
+  --bolder-font: 900;
+  --primary-shadow: #8b8eaf;
+  --bottom-margin: 0.5rem;
+  --bottom-margin-2: 1rem;
+  --line-height: 1.7rem;
+  --transition: 0.3s;
+  --primary: lightcoral;
+  --cascade: #84a59d;
+  --coral-candy: #f5cac3;
+  --bridal-health: #f7ede2;
+  --harvest-gold: #f6bd60;
+
+  --card-width: 320px;
+  --image-width: calc(var(--card-width) / 1.5);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--font-family);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  background-image: linear-gradient(
+    to bottom right,
+    var(--cascade),
+    var(--primary)
+  );
+}
+
+/* about card */
+.about-container {
+  padding: 150px;
+}
+
+.card {
+  position: relative;
+  margin: 0 auto;
+  width: 100%;
+  max-width: var(--card-width);
+  background-color: var(--bridal-health);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  text-align: center;
+  box-shadow: 0 3px 6px var(--harvest-gold);
+  transition: 0.4s;
+}
+
+.card .image {
+  position: relative;
+  width: 100%;
+  width: var(--image-width);
+  height: var(--image-width);
+  border-radius: 50%;
+  box-shadow: 0 3px 6px var(--cascade);
+  margin: -8rem auto 1.5rem;
+  padding: 0.25rem;
+  overflow: hidden;
+  background-color: var(--bridal-health);
+  transition: 0.4s;
+}
+
+.card .image img {
+  width: 100%;
+  border-radius: 100%;
+  border: 3px solid var(--primary);
+  transition: 0.4s;
+  box-shadow: 0 3px 6px var(--harvest-gold);
+}
+
+.card .name {
+  color: var(--cascade);
+  font-size: 2.4rem;
+  transition: 0.4s;
+  text-shadow: 0 3px 6px var(--harvest-gold);
+  font-weight: bolder;
+  font-family: "Bhasline", sans-serif;
+}
+
+.card .content {
+  max-height: 0;
+  overflow: hidden;
+  transition: 0.4s;
+  opacity: 0;
+  text-shadow: 0 3px 6px var(--harvest-gold);
+  font-family: sans-serif;
+  font-style: italic;
+}
+
+.card,
+.content p {
+  color: var(--cascade);
+  font-size: 1.125rem;
+}
+
+.card .content .buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1.5rem;
+}
+
+.card .content .buttons button {
+  border: none;
+  cursor: pointer;
+
+  display: block;
+  padding: 0.5rem 1rem;
+  min-width: 160px;
+  background-color: var(--primary);
+  color: var(--bridal-health);
+  font-size: 1.25rem;
+  border-radius: 0.5rem;
+  margin: 0 0.5rem;
+  transition: 0.4s;
+  box-shadow: 0 3px 6px var(--harvest-gold);
+  text-shadow: 0 3px 6px var(--harvest-gold);
+  font-family: sans-serif;
+}
+
+a:link {
+  text-decoration: none;
+}
+
+.card .content .buttons button:hover {
+  box-shadow: 0 3px 6px var(--cascade);
+  transform: translateY(-0.5rem) scale(1.15);
+}
+
+.card:hover {
+  --card-width: 480px;
+  --image-width: calc(var(--card-width) / 2);
+}
+
+.card:hover .image {
+  margin-top: -4rem;
+  border-radius: 2rem;
+}
+
+.card:hover .image img {
+  border-radius: 2rem;
+}
+
+.card:hover .name {
+  margin-bottom: 1.5rem;
+}
+
+.card:hover .content {
+  max-height: 300px;
+  opacity: 1;
+  overflow: visible;
+}
+
+a {
+  text-decoration: none;
+  color: var(--cascade);
+}
+
+a:hover {
+  color: var(--primary);
+}
+
+/* Navbar */
+ul {
+  list-style-type: none;
+}
+
+nav {
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 1.5rem 3.5rem;
+  background: var(--bridal-health);
+  text-shadow: 0 3px 6px var(--harvest-gold);
+  font-family: sans-serif;
+  font-style: italic;
+  box-shadow: 0 3px 5px var(--cascade);
+}
+
+nav a {
+  color: var(--cascade);
+
+  transition: var(--transition);
+  font-weight: bold;
+  font-size: 4vh;
+}
+nav a:hover {
+  border-bottom: 2px solid var(--bridal-health);
+}
+
+nav ul {
+  display: flex;
+  gap: 1.9rem;
+}
+
+nav ul li {
+  font-weight: var(--bold-font);
+}
+
+.burger-menu {
+  color: var(--cascade);
+  font-size: 2rem;
+  border: 0;
+  background-color: var(--bridal-health);
+  cursor: pointer;
+  display: none;
+}
+
+/* Skills section */
+.skills {
+  max-width: 68.75rem;
+  margin: auto;
+  text-align: center;
+  margin-top: 2.5rem;
+}
+
+.skill-header {
+  margin-bottom: 1rem;
+  color: var(--bridal-health);
+  text-shadow: 0 3px 6px var(--harvest-gold);
+}
+
+.skills-wrapper img {
+  padding: 1.25rem;
+  box-shadow: 0 3px 6px var(--harvest-gold);
+}
+
+.icon {
+  width: 11.875rem;
+  height: 11.25rem;
+}
+
+.icon-card {
+  background-color: var(--bridal-health);
+  border-radius: 11px;
+  box-shadow: 0 3px 10px var(--harvest-gold);
+  padding: 20px;
+  margin: 10px;
+}
+
+.icon:hover {
+  transform: translateY(-0.5rem) scale(1.15);
+  transition: 1s;
+}
+
+/* Projects section */
+.projects {
+  background-color: var(--coral-candy);
+  padding: 32px 0;
+  margin-top: 2rem;
+}
+
+.project-pic {
+  width: 65%;
+  height: 60%;
+}
+
+.projects-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.project-card {
+  background-color: #fff;
+  border-radius: 11px;
+  box-shadow: 0 3px 10px var(--harvest-gold);
+  padding: 20px;
+  margin: 10px;
+}
+
+.projects-title {
+  text-align: center;
+  margin-bottom: 1rem;
+  color: var(--bridal-health);
+  text-shadow: 0 3px 6px var(--harvest-gold);
+}
+
+.project-container {
+  text-align: center;
+  width: 21.875rem;
+  padding: 1rem;
+  background-color: var(--bridal-health);
+}
+
+.project-container p {
+  padding: 0.4rem;
+  font-style: italic;
+  color: var(--cascade);
+}
+
+.project-title {
+  margin-bottom: var(--bottom-margin);
+  color: var(--cascade);
+  text-shadow: 0 3px 6px var(--);
+}
+
+.project-details {
+  margin-bottom: var(--bottom-margin);
+}
+
+/* Contacts section */
+.contact {
+  margin-top: 2rem;
+}
+
+.contact h2 {
+  text-align: center;
+  margin-bottom: var(--bottom-margin-2);
+  color: var(--bridal-health);
+  text-shadow: 0 3px 10px var(--harvest-gold);
+}
+
+.contact-form-container {
+  max-width: 40.75rem;
+  margin: 0 auto;
+  padding: 0.938rem;
+  border-radius: 5px;
+  box-shadow: 0 3px 10px var(--harvest-gold);
+}
+
+.contact-form-container label {
+  line-height: 2.7em;
+  font-weight: var(--bold-font);
+  color: var(--bridal-health);
+}
+
+.contact-form-container textarea {
+  min-height: 6.25rem;
+  font-size: 14px;
+}
+
+.contact-form-container .input-field {
+  width: 100%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-radius: 5px;
+  border: none;
+  border: 2px outset var(--primary);
+  font-size: 0.875rem;
+  outline: none;
+}
+
+.input-field::placeholder {
+  padding: 0.5rem;
+  color: var(--cascade);
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  background-color: var(--primary);
+  border: 2px solid var(--harvest-gold);
+  border-radius: 5px;
+  font-size: 1rem;
+  font-weight: var(--bold-font);
+  transition: var(--transition);
+  color: var(--bridal-health);
+  text-shadow: 0 3px 10px var(--harvest-gold);
+}
+
+.submit-btn:hover {
+  background-color: var(--cascade);
+  border: 2px solid var(--coral-candy);
+  cursor: pointer;
+}
+
+/* Scroll up button*/
+.scroll-up {
+  position: fixed;
+  right: 0.5%;
+  bottom: 3%;
+  cursor: pointer;
+}
+
+.up-arrow {
+  width: 3rem;
+  height: 3rem;
+}
+
+/* Media queries for responsiveness */
+@media screen and (max-width: 720px) {
+  nav {
+    padding: 1.5rem 1rem;
+  }
+  nav ul {
+    position: fixed;
+    background-color: var(--bridal-health);
+    opacity: 0.9;
+    flex-direction: column;
+    top: 86px;
+    left: 10%;
+    width: 80%;
+    text-align: center;
+    transform: translateX(120%);
+    transition: transform 0.5s ease-in;
+  }
+
+  nav ul li {
+    margin: 8px;
+  }
+
+  .burger-menu {
+    display: block;
+  }
+
+  nav ul.show {
+    transform: translateX(0);
+  }
+
+  .icon {
+    width: 5.875rem;
+    height: 5.25rem;
+  }
+
+  .projects-container {
+    flex-direction: column;
+  }
+
+  .project-container {
+    width: 20.875rem;
+  }
+
+  .contact-form-container {
+    max-width: 23.75rem;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .project-container {
+    width: 17.875rem;
+  }
+
+  .contact-form-container {
+    max-width: 17.75rem;
+  }
+}
+
+/* "Circles" background animation */
+
+circles .circles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+@keyframes animate {
+  0% {
+    opacity: 1;
+    border-radius: 0;
+    transform: translateY(0) rotate(0deg);
+  }
+  100% {
+    opacity: 0;
+    border-radius: 50%;
+    transform: translateY(2500px) rotate(720deg);
+  }
+}
+
+.circles div {
+  position: absolute;
+  display: block;
+  width: 20px;
+  height: 20px;
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 3px 10px var(--coral-candy);
+  top: -300px;
+  animation: animate 25s linear infinite;
+}
+
+.circles div:nth-child(1) {
+  left: 25%;
+  width: 80px;
+  height: 80px;
+  animation-delay: 0s;
+}
+
+.circles div:nth-child(2) {
+  left: 10%;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  animation-delay: 2s;
+  animation-duration: 12s;
+}
+
+.circles div:nth-child(3) {
+  left: 70%;
+  width: 20px;
+  height: 20px;
+  animation-delay: 4s;
+}
+
+.circles div:nth-child(4) {
+  left: 40%;
+  width: 60px;
+  height: 60px;
+  animation-delay: 0s;
+  animation-duration: 18s;
+}
+
+.circles div:nth-child(5) {
+  left: 65%;
+  width: 20px;
+  height: 20px;
+  animation-delay: 0s;
+}
+
+.circles div:nth-child(6) {
+  left: 75%;
+  width: 110px;
+  height: 110px;
+  animation-delay: 3s;
+}
+
+.circles div:nth-child(7) {
+  left: 35%;
+  width: 150px;
+  height: 150px;
+  animation-delay: 7s;
+}
+
+.circles div:nth-child(8) {
+  left: 50%;
+  width: 25px;
+  height: 25px;
+  animation-delay: 15s;
+  animation-duration: 45s;
+}
+
+.circles div:nth-child(9) {
+  left: 20%;
+  width: 15px;
+  height: 15px;
+  animation-delay: 2s;
+  animation-duration: 35s;
+}
+
+.circles div:nth-child(10) {
+  left: 85%;
+  width: 150px;
+  height: 150px;
+  animation-delay: 0s;
+  animation-duration: 11s;
+}
